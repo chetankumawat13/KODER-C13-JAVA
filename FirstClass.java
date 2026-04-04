@@ -857,143 +857,242 @@ import java.util.*;
 
 
 
-public class FirstClass {
+// public class FirstClass {
 
-    // 🔹 Variables (Class + Object concept)
-    int a = 10, b = 5;
+//     // 🔹 Variables (Class + Object concept)
+//     int a = 10, b = 5;
 
-    // 🔹 Constructor
-    FirstClass() {
-        System.out.println("Constructor Called!");
+//     // 🔹 Constructor
+//     FirstClass() {
+//         System.out.println("Constructor Called!");
+//     }
+
+//     // 🔹 Operators Demo
+//     void operatorsDemo() {
+//         System.out.println("Operators Demo:");
+//         System.out.println("Addition: " + (a + b));
+//         System.out.println("Subtraction: " + (a - b));
+//         System.out.println("Multiplication: " + (a * b));
+//         System.out.println("Division: " + (a / b));
+//     }
+
+//     // 🔹 Complex Arithmetic
+//     void complexAdd() {
+//         int r1 = 2, i1 = 3;
+//         int r2 = 4, i2 = 5;
+
+//         int real = r1 + r2;
+//         int imag = i1 + i2;
+
+//         System.out.println("Complex Addition: " + real + " + " + imag + "i");
+//     }
+
+//     // 🔹 Matrix Addition (Loop)
+//     void matrixAdd() {
+//         int a[][] = {{1,2},{3,4}};
+//         int b[][] = {{5,6},{7,8}};
+//         int c[][] = new int[2][2];
+
+//         System.out.println("Matrix Addition:");
+
+//         for(int i=0; i<2; i++) {
+//             for(int j=0; j<2; j++) {
+//                 c[i][j] = a[i][j] + b[i][j];
+//                 System.out.print(c[i][j] + " ");
+//             }
+//             System.out.println();
+//         }
+//     }
+
+//     // 🔹 Control + Iteration
+//     void controlDemo(int num) {
+
+//         // if-else
+//         if(num > 0)
+//             System.out.println("Positive Number");
+//         else
+//             System.out.println("Negative Number");
+
+//         // switch
+//         switch(num) {
+//             case 0:
+//                 System.out.println("Zero");
+//                 break;
+//             default:
+//                 System.out.println("Not Zero");
+//         }
+
+//         // loop
+//         System.out.print("Loop: ");
+//         for(int i=1; i<=5; i++) {
+//             System.out.print(i + " ");
+//         }
+//         System.out.println();
+//     }
+
+//     // 🔹 Recursion (Tower of Hanoi)
+//     void hanoi(int n, char source, char destination, char auxiliary) {
+//         if(n == 1) {
+//             System.out.println("Move disk 1 from " + source + " to " + destination);
+//             return;
+//         }
+
+//         hanoi(n-1, source, auxiliary, destination);
+//         System.out.println("Move disk " + n + " from " + source + " to " + destination);
+//         hanoi(n-1, auxiliary, destination, source);
+//     }
+
+//     // 🔹 Main Method
+//     public static void main(String[] args) {
+
+//         // Object Creation
+//         FirstClass obj = new FirstClass();
+
+//         // Operators
+//         obj.operatorsDemo();
+
+//         // Complex
+//         obj.complexAdd();
+
+//         // Matrix
+//         obj.matrixAdd();
+
+//         // Control + Loop
+//         obj.controlDemo(5);
+
+//         // Tower of Hanoi
+//         System.out.println("Tower of Hanoi:");
+//         obj.hanoi(3, 'A', 'C', 'B');
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.util.Scanner;
+
+// Interface
+interface Billable {
+    double calculateBill();
+}
+
+// Parent Class
+class Consumer {
+    String name;
+    int units;
+
+    Consumer(String name, int units) {
+        this.name = name;
+        this.units = units;
     }
 
-    // 🔹 Operators Demo
-    void operatorsDemo() {
-        System.out.println("Operators Demo:");
-        System.out.println("Addition: " + (a + b));
-        System.out.println("Subtraction: " + (a - b));
-        System.out.println("Multiplication: " + (a * b));
-        System.out.println("Division: " + (a / b));
-    }
-
-    // 🔹 Complex Arithmetic
-    void complexAdd() {
-        int r1 = 2, i1 = 3;
-        int r2 = 4, i2 = 5;
-
-        int real = r1 + r2;
-        int imag = i1 + i2;
-
-        System.out.println("Complex Addition: " + real + " + " + imag + "i");
-    }
-
-    // 🔹 Matrix Addition (Loop)
-    void matrixAdd() {
-        int a[][] = {{1,2},{3,4}};
-        int b[][] = {{5,6},{7,8}};
-        int c[][] = new int[2][2];
-
-        System.out.println("Matrix Addition:");
-
-        for(int i=0; i<2; i++) {
-            for(int j=0; j<2; j++) {
-                c[i][j] = a[i][j] + b[i][j];
-                System.out.print(c[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-
-    // 🔹 Control + Iteration
-    void controlDemo(int num) {
-
-        // if-else
-        if(num > 0)
-            System.out.println("Positive Number");
-        else
-            System.out.println("Negative Number");
-
-        // switch
-        switch(num) {
-            case 0:
-                System.out.println("Zero");
-                break;
-            default:
-                System.out.println("Not Zero");
-        }
-
-        // loop
-        System.out.print("Loop: ");
-        for(int i=1; i<=5; i++) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-    }
-
-    // 🔹 Recursion (Tower of Hanoi)
-    void hanoi(int n, char source, char destination, char auxiliary) {
-        if(n == 1) {
-            System.out.println("Move disk 1 from " + source + " to " + destination);
-            return;
-        }
-
-        hanoi(n-1, source, auxiliary, destination);
-        System.out.println("Move disk " + n + " from " + source + " to " + destination);
-        hanoi(n-1, auxiliary, destination, source);
-    }
-
-    // 🔹 Main Method
-    public static void main(String[] args) {
-
-        // Object Creation
-        FirstClass obj = new FirstClass();
-
-        // Operators
-        obj.operatorsDemo();
-
-        // Complex
-        obj.complexAdd();
-
-        // Matrix
-        obj.matrixAdd();
-
-        // Control + Loop
-        obj.controlDemo(5);
-
-        // Tower of Hanoi
-        System.out.println("Tower of Hanoi:");
-        obj.hanoi(3, 'A', 'C', 'B');
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Units: " + units);
     }
 }
 
+// Child Class 1
+class DomesticConsumer extends Consumer implements Billable {
 
+    DomesticConsumer(String name, int units) {
+        super(name, units);
+    }
 
+    public double calculateBill() {
+        return units * 5;
+    }
+}
 
+// Child Class 2
+class CommercialConsumer extends Consumer implements Billable {
 
+    CommercialConsumer(String name, int units) {
+        super(name, units);
+    }
 
+    public double calculateBill() {
+        return units * 10;
+    }
+}
 
+// Custom Exception
+class InvalidUnitException extends Exception {
+    InvalidUnitException(String msg) {
+        super(msg);
+    }
+}
 
+// Main Class (IMPORTANT: name same as file)
+public class FirstClass {
 
+    static void checkUnits(int units) throws InvalidUnitException {
+        if (units < 0) {
+            throw new InvalidUnitException("Units cannot be negative!");
+        }
+    }
 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
+        try {
+            System.out.print("Enter Name: ");
+            String name = sc.nextLine();
 
+            System.out.print("Enter Units: ");
+            int units = sc.nextInt();
 
+            checkUnits(units);
 
+            System.out.print("Type (1 Domestic / 2 Commercial): ");
+            int type = sc.nextInt();
 
+            Consumer c;
 
+            if (type == 1) {
+                c = new DomesticConsumer(name, units);
+            } else {
+                c = new CommercialConsumer(name, units);
+            }
 
+            c.display();
 
+            double bill = ((Billable)c).calculateBill();
+            System.out.println("Total Bill: ₹" + bill);
 
+        } catch (InvalidUnitException e) {
+            System.out.println("Error: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Invalid Input!");
+        }
 
-
-
-
-
-
-
-
-
-
+        sc.close();
+    }
+}
 
 
 
